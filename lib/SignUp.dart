@@ -10,7 +10,7 @@ class _SignUpState extends State<SignUp> {
   FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String? _name, _email, _password;
+  String _name, _email, _password;
 
   checkAuthentication() async {
     _auth.authStateChanges().listen((user) async {
@@ -27,8 +27,8 @@ class _SignUpState extends State<SignUp> {
   }
 
   signUp() async {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
+    if (_formKey.currentState.validate()) {
+      _formKey.currentState.save();
 
       try {
         UserCredential user = await _auth.createUserWithEmailAndPassword(
@@ -43,7 +43,6 @@ class _SignUpState extends State<SignUp> {
         }
       } catch (e) {
         
-       
       }
     }
   }
@@ -88,7 +87,7 @@ class _SignUpState extends State<SignUp> {
                     Container(
                       child: TextFormField(
                           validator: (input) {
-                            if (input!.isEmpty) return 'Enter Name';
+                            if (input.isEmpty) return 'Enter Name';
                           },
                           decoration: InputDecoration(
                             labelText: 'Name',
@@ -99,7 +98,7 @@ class _SignUpState extends State<SignUp> {
                     Container(
                       child: TextFormField(
                           validator: (input) {
-                            if (input!.isEmpty) return 'Enter Email';
+                            if (input.isEmpty) return 'Enter Email';
                           },
                           decoration: InputDecoration(
                               labelText: 'Email',
@@ -109,7 +108,7 @@ class _SignUpState extends State<SignUp> {
                     Container(
                       child: TextFormField(
                           validator: (input) {
-                            if (input!.length < 6)
+                            if (input.length < 6)
                               return 'Provide Minimum 6 Character';
                           },
                           decoration: InputDecoration(

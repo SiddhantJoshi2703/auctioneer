@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  User? user;
+  User user;
   bool isloggedin = false;
 
   checkAuthentification() async {
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Container(
                   child: Text(
-                    "Hello ${user!.displayName} you are Logged in as ${user!.email}",
+                    "Hello ${user.displayName} you are Logged in as ${user.email}",
                     style:
                         TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                   ),

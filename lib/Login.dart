@@ -11,7 +11,7 @@ class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String? _email, _password;
+  String _email, _password;
 
 
   checkAuthentification() async {
@@ -31,8 +31,8 @@ class _LoginState extends State<Login> {
   }
 
   login() async {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
+    if (_formKey.currentState.validate()) {
+      _formKey.currentState.save();
 
       try {
         await _auth.signInWithEmailAndPassword(
@@ -88,12 +88,12 @@ class _LoginState extends State<Login> {
                     Container(
                       child: TextFormField(
                           validator: (input) {
-                            if (input!.isEmpty) return 'Enter Email';
+                            if (input.isEmpty) return 'Enter Email';
                           },
                           decoration: InputDecoration(
                               labelText: 'Email',
                               prefixIcon: Icon(Icons.email)),
-                          onSaved: (input) => _email = input!),
+                          onSaved: (input) => _email = input),
                     ),
                     Container(
                       child: TextFormField(
@@ -106,7 +106,7 @@ class _LoginState extends State<Login> {
                             prefixIcon: Icon(Icons.lock),
                           ),
                           obscureText: true,
-                          onSaved: (input) => _password = input!),
+                          onSaved: (input) => _password = input),
                     ),
                     SizedBox(height: 20),
                     ElevatedButton(
