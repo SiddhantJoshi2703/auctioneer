@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "301171569920",
+    "project_id": "auctioneer-8e9ae",
+    "storage_bucket": "auctioneer-8e9ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301171569920:android:a4c0a223b8c6594705afe5",
+        "android_client_info": {
+          "package_name": "siddhant.com.auctioneer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301171569920-k3n06r99rgsbrpoek853g4ieetns6vm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCMKhD-KVH5gfYtb4txU7QVxHvfkWREAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301171569920-k3n06r99rgsbrpoek853g4ieetns6vm6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
